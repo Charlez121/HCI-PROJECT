@@ -37,7 +37,6 @@ function display(result){
     const content = result.map((list) => {
         return "<li onclick=selecInput(this)>" + list + "</li>";
     });
-
     suggestionBox.innerHTML = "<ul>" + content.join("") + "</ul>";
     suggestionBox.style.display = result.length ? "block" : "none";
 }
