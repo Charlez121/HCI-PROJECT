@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URBN | Modern clothing. Everyday fits.</title>
+
+  <!-- Font: Inter (matches the wireframe). Remove these 3 lines to use a system font instead. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+
+    <!-- 1. Logo (change the text or swap for an <img> later) -->
+    <a href="index.html" class="logo">URBN</a>
+
+    <!-- 2. Main navigation -->
+    <!-- To change the active page, move class="active" to another link -->
+    <nav class="nav" aria-label="Main">
+      <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+      <a href="new-arrivals.html" class="nav-link">New Arrivals</a>
+      <a href="clothing.html" class="nav-link">Clothing</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+
+    <!-- 3. Search, account, and cart -->
+    <div class="header-actions">
+
+      <!-- Search bar -->
+      <form class="search" role="search" action="clothing.html" method="get">
+        <img src="icons/search.svg" alt="" class="icon search-icon">
+        <input type="search" name="q" class="search-input" placeholder="Search..." aria-label="Search products">
+        <ul class="suggestions" hidden></ul>
+      </form>
+
+      <!-- Account -->
+      <a href="account.html" class="icon-btn" aria-label="Account">
+        <img src="icons/user.svg" alt="" class="icon">
+      </a>
+
+      <!-- Cart (icon only) -->
+      <a href="cart.html" class="icon-btn" aria-label="Cart">
+        <img src="icons/cart.svg" alt="" class="icon">
+      </a>
+
+    </div>
+  </header>
+
+  <script src="buttons.js"></script>
+</body>
+</html>
