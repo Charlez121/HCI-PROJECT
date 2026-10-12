@@ -5,96 +5,254 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>URBN | Modern clothing. Everyday fits.</title>
 
-  <!-- Font: Inter (matches the wireframe). Remove these 3 lines to use a system font instead. -->
+  <!-- Font: Inter. Remove these 3 lines to use a system font instead. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ================= HEADER ================= -->
-  <header class="header">
+  <header class="header" id="home">
 
-    <!-- 1. Logo (change the text or swap for an <img> later) -->
+    <!-- Logo -->
     <a href="index.html" class="logo">URBN</a>
 
-    <!-- 2. Main navigation -->
-    <!-- To change the active page, move class="active" to another link -->
+    <!-- Navigation (to change the active page, move class="active" to another link) -->
     <nav class="nav" aria-label="Main">
-      <a href="index.html" class="nav-link active" aria-current="page">Home</a>
-      <a href="new-arrivals.html" class="nav-link">New Arrivals</a>
+      <a href="#home" class="nav-link" aria-current="page">Home</a>
+      <span class="nav-link">New Arrivals</span>
       <a href="clothing.html" class="nav-link">Clothing</a>
       <a href="about.html" class="nav-link">About</a>
     </nav>
 
-    <!-- 3. Search, account, and cart -->
+    <!-- Search, account, and cart -->
     <div class="header-actions">
 
       <!-- Search bar -->
       <form class="search" role="search" action="clothing.html" method="get">
-        <img src="icons/search.svg" alt="" class="icon search-icon">
+        <img src="Icons/search.svg" alt="" class="icon search-icon">
         <input type="search" name="q" class="search-input" placeholder="Search..." aria-label="Search products">
-        <ul class="suggestions" ></ul>
+        <ul class="suggestions" hidden></ul>
       </form>
 
       <!-- Account -->
       <a href="account.html" class="icon-btn" aria-label="Account">
-        <img src="icons/user.svg" alt="" class="icon">
+        <img src="Icons/user.svg" alt="" class="icon">
       </a>
 
-      <!-- Cart (icon only) -->
+      <!-- Cart -->
       <a href="cart.html" class="icon-btn" aria-label="Cart">
-        <img src="icons/cart.svg" alt="" class="icon">
+        <img src="Icons/cart.svg" alt="" class="icon">
       </a>
 
     </div>
   </header>
+
+
+  <!-- ================= MAIN ================= -->
   <main class="main">
 
-  <!-- Big banner: change the image name in src -->
-  <section class="box hero">
-    <img src="Home-boxpictures/herobox.jpg" alt="">
-    <div class="box-text">
-      <p class="box-label">CLOTHING ESSENTIALS</p>
-      <h2 class="box-title"></h2>
-      <p class="box-sub">Modern clothing. Everyday fits. Built for you.</p>
-    </div>
-  </section>
-
-  <!-- 3 boxes below: change the image name in each src -->
-  <section class="cards">
-    <article class="box card">
-      <img src="Home-boxpictures/1.jpg" alt="">
+    <!-- Big banner (change the picture in src) -->
+    <section class="box hero">
+      <img src="homeImages/herobox.jpg" alt="">
       <div class="box-text">
-        <p class="box-label"></p>
+        <p class="box-label">CLOTHING ESSENTIALS</p>
         <h2 class="box-title"></h2>
-        <p class="box-sub"></p>
+        <p class="box-sub">Modern clothing. Everyday fits. Built for you.</p>
       </div>
-    </article>
+    </section>
 
-    <article class="box card">
-      <img src="Home-boxpictures/2.jpg" alt="">
-      <div class="box-text">
-        <p class="box-label"></p>
-        <h2 class="box-title"></h2>
-        <p class="box-sub"></p>
+    <!-- 3 boxes below the banner (change the picture in each src) -->
+    <section class="cards">
+
+      <article class="box card">
+        <img src="homeImages/1.jpg" alt="">
+        <div class="box-text">
+          <h2 class="box-title"></h2>
+          <p class="box-sub"></p>
+        </div>
+      </article>
+
+      <article class="box card">
+        <img src="homeImages/2.jpg" alt="">
+        <div class="box-text">
+          <h2 class="box-title"></h2>
+          <p class="box-sub"></p>
+        </div>
+      </article>
+
+      <article class="box card">
+        <img src="homeImages/3.jpg" alt="">
+        <div class="box-text">
+          <h2 class="box-title"></h2>
+          <p class="box-sub"></p>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="new-arrivals" id="new-arrivals" aria-labelledby="new-arrivals-title">
+      <h1 class="section-title" id="new-arrivals-title">NEW ARRIVALS</h1>
+      <div class="products">
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image"></div>
+          <div class="product-info">
+            <div>
+              <p class="product-name">Product Name</p>
+              <p class="product-price">₱ 0.00</p>
+              <div class="product-colors">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <button class="add-cart" aria-label="Add Product Name to cart">
+              <img src="Icons/cart.svg" alt="">
+            </button>
+          </div>
+        </article>
       </div>
-    </article>
+    </section>
+  </main>
 
-    <article class="box card">
-      <img src="Home-boxpictures/3.jpg" alt="">
-      <div class="box-text">
-        <p class="box-label"></p>
-        <h2 class="box-title"></h2>
-        <p class="box-sub"></p>
-      </div>
-    </article>
-  </section>
-
-</main>
-
-  <script src="buttons.js"></script>
+  <script src="search.js"></script>
+  <script src="page-transitions.js"></script>
 </body>
 </html>

@@ -1,20 +1,17 @@
-/* =========================================================
-   URBN — style.css
-   Step 1: Header
-   Look for "ADJUST" comments to tweak sizes, colors, spacing.
-   ========================================================= */
+/* URBN — style.css */
 
-/* ---------- Variables (change these once, updates everywhere) ---------- */
+/* ---------- Variables ---------- */
 :root {
-  --color-text: #111111;        /* ADJUST: main text / icon color */
-  --color-bg: #ffffff;          /* ADJUST: page background */
-  --color-border: #b9b9b9;      /* ADJUST: search bar outline */
-  --color-muted: #777777;       /* ADJUST: placeholder text */
+  --color-text: #111111;
+  --color-bg: #ffffff;
+  --color-border: #b9b9b9;
+  --color-muted: #777777;
 
   --font-main: "Inter", Arial, sans-serif;
 
-  --page-padding: 56px;         /* ADJUST: left/right space around the whole page */
+  --page-padding: 56px;
 }
+
 
 /* ---------- Reset ---------- */
 * {
@@ -29,71 +26,87 @@ body {
   background: var(--color-bg);
 }
 
+html {
+  scroll-behavior: auto;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ---------- Header layout ---------- */
-.header {
-  display: flex;
-  align-items: center;
-  height: 96px;                           /* ADJUST: header height */
-  padding: 0 var(--page-padding);
+a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
 }
 
-/* ---------- Logo ---------- */
-.logo {
-  font-size: 48px;                        /* ADJUST: logo size */
-  font-weight: 800;                       /* ADJUST: logo boldness */
-  letter-spacing: 0.18em;                 /* ADJUST: space between U R B N */
-  line-height: 1;
-  padding-left: 30px;                     /* ADJUST: nudges logo inward like the wireframe */
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  height: 96px;
+  padding: 0 var(--page-padding);
+  background: var(--color-bg);
+  box-shadow: 0 2px 0 #d1d1d1;
 }
+
+.logo {
+  padding-left: 30px;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
 
 /* ---------- Navigation ---------- */
 .nav {
   display: flex;
-  gap: 60px;                              /* ADJUST: space between nav links */
-  margin-left: clamp(40px, 14vw, 300px);  /* ADJUST: gap between logo and nav */
+  gap: 60px;
+  margin-left: clamp(40px, 14vw, 300px);
 }
 
 .nav-link {
-  font-size: 18px;                        /* ADJUST: nav text size */
+  padding-bottom: 6px;
+  font-size: 18px;
   font-weight: 500;
-  padding-bottom: 6px;                    /* space between text and underline */
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  border-bottom-color: var(--color-text); /* underline for hover + current page */
+  border-bottom-color: var(--color-text);
 }
 
-/* ---------- Right side: search + icons ---------- */
+
+/* ---------- Search, account, cart ---------- */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 40px;                              /* ADJUST: space between search, user, cart */
-  margin-left: auto;                      /* pushes this group to the far right */
+  gap: 40px;
+  margin-left: auto;
   padding-right: 20px;
 }
 
-/* Search bar */
 .search {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 14px;
-  width: 320px;                           /* ADJUST: search bar width */
-  height: 46px;                           /* ADJUST: search bar height */
+  width: 320px;
+  height: 46px;
   padding: 0 18px;
   border: 1px solid var(--color-border);
-  border-radius: 999px;                   /* fully rounded pill */
+  border-radius: 999px;
 }
 
 .search:focus-within {
-  border-color: var(--color-text);        /* darker outline while typing */
+  border-color: var(--color-text);
 }
 
 .search-input {
@@ -111,61 +124,36 @@ a {
   color: var(--color-muted);
 }
 
-/* ---------- Icons (shared by search, user, cart) ---------- */
-/* Icon drawings live in the icons/ folder. To change an icon's color or
-   line thickness, edit the stroke values inside the .svg file itself. */
 .icon {
-  width: 28px;                            /* ADJUST: icon size */
-  height: 28px;
   display: block;
+  width: 28px;
+  height: 28px;
 }
 
 .search-icon {
-  width: 22px;                            /* search icon is a bit smaller */
+  width: 22px;
   height: 22px;
   flex-shrink: 0;
 }
 
 .icon-btn {
-  position: relative;                     /* lets the cart badge sit on top */
   display: flex;
   align-items: center;
 }
 
-/* ---------- Keyboard focus (accessibility) ---------- */
-a:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 4px;
-}
 
-/* ---------- Smaller screens ---------- */
-@media (max-width: 900px) {
-  :root { --page-padding: 20px; }
-
-  .logo { font-size: 32px; padding-left: 0; }
-  .nav { gap: 24px; margin-left: 24px; }
-  .nav-link { font-size: 15px; }
-  .search { display: none; }   /* ADJUST: search is hidden on small screens for now */
-  .header-actions { gap: 24px; padding-right: 0; }
-}
-
-.search {
-  position: relative;
-}
-
+/* ---------- Search suggestions ---------- */
 .suggestions {
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
   right: 0;
-  margin: 0;
-  padding: 0;
+  z-index: 10;
   list-style: none;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 16px;
   overflow: hidden;
-  z-index: 10;
 }
 
 .suggestions li {
@@ -176,15 +164,16 @@ a:focus-visible {
 .suggestions li:hover {
   background: #f2f2f2;
 }
-/* ---------- Page layout ---------- */
+
+
+/* ---------- Home page ---------- */
 .main {
   padding: 40px var(--page-padding);
 }
 
-/* ---------- Boxes (shared by banner and cards) ---------- */
 .box {
   position: relative;
-  background: #d4d5d5;          /* gray shows if no picture */
+  background: #d4d5d5;
   overflow: hidden;
 }
 
@@ -193,45 +182,216 @@ a:focus-visible {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;            /* picture fills the box without stretching */
+  object-fit: cover;
 }
 
-/* ---------- Text on top of the picture ---------- */
 .box-text {
-  position: relative;           /* keeps text above the picture */
+  position: relative;
+  z-index: 1;
   padding: 70px 0 0 130px;
   color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.box-label { font-size: 16px; font-weight: 700; letter-spacing: 0.1em; }
-.box-title { font-size: 72px; font-weight: 800; letter-spacing: 0.15em; line-height: 1; }
-.box-sub   { font-size: 18px; opacity: 0.8; }
-
-/* ---------- Sizes ---------- */
-.hero  { height: 340px; }                 /* ADJUST: banner height */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;                              /* ADJUST: space between boxes */
-  margin-top: 24px;
+.box-label {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
-.card  { height: 430px; }                 /* ADJUST: box height */
-/* Dark fade on the left so the text blends with the picture */
+.box-title {
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  line-height: 1;
+}
+
+.box-sub {
+  font-size: 18px;
+  color: #e6e6e6;
+}
+
+.hero {
+  height: 340px;
+}
+
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 60%);  /* ADJUST: 0.65 = darkness */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 60%);
 }
 
-/* Keep the text above the fade */
-.box-text {
-  z-index: 1;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 24px;
 }
 
-/* Slightly softer text colors */
-.box-label { color: #ffffff; }
-.box-sub   { color: #e6e6e6; opacity: 1; }
+.card {
+  height: 430px;
+}
+
+
+/* ---------- New Arrivals ---------- */
+.new-arrivals {
+  margin-top: 56px;
+  scroll-margin-top: 112px;
+}
+
+.section-title {
+  display: table;
+  margin-bottom: 24px;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #111111, transparent);
+  transform-origin: left;
+  animation: line-in 1s ease-out;
+}
+
+@keyframes line-in {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px 44px;
+  padding-bottom: 60px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 2 / 3;
+  background: #d4d5d5;
+}
+
+.product-image {
+  flex: 1;
+  min-height: 0;
+  padding: 8px;
+  background: #dedfdf;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 8px 8px;
+  font-size: 15px;
+}
+
+.product-price {
+  margin-top: 2px;
+}
+
+.product-colors {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.product-colors span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.product-colors span:nth-child(1) { background: #bdbdbd; }
+.product-colors span:nth-child(2) { background: #8c8c8c; }
+.product-colors span:nth-child(3) { background: #4a4a4a; }
+
+.add-cart {
+  display: flex;
+  padding: 4px;
+  background: transparent;
+  border: 1px solid #999;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-cart img {
+  width: 25px;
+  height: 25px;
+}
+
+.add-cart:hover {
+  background: var(--color-text);
+}
+
+.add-cart:hover img {
+  filter: invert(1);
+}
+
+
+/* ---------- Smaller screens ---------- */
+@media (max-width: 1100px) {
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-padding: 20px;
+  }
+
+  .logo {
+    padding-left: 0;
+    font-size: 32px;
+  }
+
+  .nav {
+    gap: 24px;
+    margin-left: 24px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 24px;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}
+
+
+/* ---------- No animation if the visitor turned it off ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .section-title::after {
+    animation: none;
+  }
+}
