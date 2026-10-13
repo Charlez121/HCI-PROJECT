@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>URBN | Modern clothing. Everyday fits.</title>
+  <title>URBN</title>
 
   <!-- Font: Inter. Remove these 3 lines to use a system font instead. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="home">
 
   <!-- ================= HEADER ================= -->
-  <header class="header" id="home">
+  <header class="header">
 
     <!-- Logo -->
     <a href="index.html" class="logo">URBN</a>
@@ -24,9 +24,9 @@
     <!-- Navigation (to change the active page, move class="active" to another link) -->
     <nav class="nav" aria-label="Main">
       <a href="#home" class="nav-link" aria-current="page">Home</a>
-      <span class="nav-link">New Arrivals</span>
-      <a href="clothing.html" class="nav-link">Clothing</a>
-      <a href="about.html" class="nav-link">About</a>
+      <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+      <a href="#clothing" class="nav-link">Clothing</a>
+      <a href="#our-story" class="nav-link">About</a>
     </nav>
 
     <!-- Search, account, and cart -->
@@ -61,7 +61,7 @@
       <img src="homeImages/herobox.jpg" alt="">
       <div class="box-text">
         <p class="box-label">CLOTHING ESSENTIALS</p>
-        <h2 class="box-title"></h2>
+        <h2 class="box-title">Charlez</h2>
         <p class="box-sub">Modern clothing. Everyday fits. Built for you.</p>
       </div>
     </section>
@@ -99,7 +99,9 @@
       <h1 class="section-title" id="new-arrivals-title">NEW ARRIVALS</h1>
       <div class="products">
         <article class="product">
-          <div class="product-image"></div>
+          <div class="product-image">
+            <img src="T-shirts/t1.jpg" alt="T-shirt">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -114,7 +116,9 @@
           </div>
         </article>
         <article class="product">
-          <div class="product-image"></div>
+          <div class="product-image">
+            <img src="T-shirts/t2.jpg" alt="T-shirt">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -129,7 +133,9 @@
           </div>
         </article>
         <article class="product">
-          <div class="product-image"></div>
+          <div class="product-image">
+          <img src="T-shirts/t3.png" alt="T-shirt">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -144,7 +150,9 @@
           </div>
         </article>
         <article class="product">
-          <div class="product-image"></div>
+          <div class="product-image">
+            <img src="T-shirts/t4.jpg" alt="T-shirt">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -159,7 +167,9 @@
           </div>
         </article>
         <article class="product">
-          <div class="product-image"></div>
+          <div class="product-image">
+            <img src="T-shirts/t5.png" alt="T-shirt">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -251,8 +261,45 @@
       </div>
     </section>
   </main>
+  <section class="clothing" id="clothing" aria-labelledby="clothing-title">
+      <h2 class="section-title" id="clothing-title">CLOTHING</h2>
+      <div class="cards">
+        <article class="box card clothing-category">
+          <img src="" alt="">
+          <div class="box-text">
+            <h3 class="box-title">TOPS</h3>
+            <p class="box-sub">Everyday essentials</p>
+          </div>
+        </article>
+        <article class="box card clothing-category">
+          <img src="" alt="">
+          <div class="box-text">
+            <h3 class="box-title">BOTTOMS</h3>
+            <p class="box-sub">Fits for every day</p>
+          </div>
+        </article>
+        <article class="box card clothing-category">
+          <img src="" alt="">
+          <div class="box-text">
+            <h3 class="box-title">OUTERWEAR</h3>
+            <p class="box-sub">Layer up your look</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <script src="search.js"></script>
-  <script src="page-transitions.js"></script>
+    <section class="our-story" id="our-story" aria-labelledby="our-story-title">
+      <h2 class="section-title" id="our-story-title">OUR STORY</h2>
+      <div class="story-panel">
+        <p class="story-lead">Great street style shouldn't cost a fortune.</p>
+        <div class="story-copy">
+          <p>URBN started with a simple idea: good clothes shouldn't go to waste. We hunt through thrift finds and pre-loved pieces to bring you urban fits with real character, from oversized tees and heavyweight hoodies to baggy denim and cargos.</p>
+          <p><strong>Every piece is one of a kind. When it's gone, it's gone.</strong></p>
+        </div>
+      </div>
+    </section>
+
+  <script src="backend.js"></script>
+
 </body>
 </html>

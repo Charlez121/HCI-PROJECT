@@ -27,7 +27,7 @@ body {
 }
 
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -82,7 +82,6 @@ a:focus-visible {
 .nav-link.active {
   border-bottom-color: var(--color-text);
 }
-
 
 /* ---------- Search, account, cart ---------- */
 .header-actions {
@@ -240,6 +239,68 @@ a:focus-visible {
   scroll-margin-top: 112px;
 }
 
+/* ---------- Clothing ---------- */
+.clothing {
+  margin: 56px var(--page-padding) 0;
+  scroll-margin-top: 112px;
+}
+
+.clothing-category::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+}
+
+.clothing-category .box-text {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 24px;
+}
+
+.clothing-category .box-title {
+  font-size: 32px;
+  letter-spacing: 0.08em;
+}
+
+.our-story {
+  margin: 260px var(--page-padding) 0;
+  scroll-margin-top: 112px;
+}
+
+.our-story .section-title {
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.story-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 40px;
+  min-height: clamp(520px, 72vh, 820px);
+  padding: clamp(28px, 6vw, 80px);
+  background: linear-gradient(135deg, #f2f2f0, #d9d9d7);
+}
+
+.story-lead {
+  max-width: 600px;
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.story-copy {
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.story-copy p + p {
+  margin-top: 60px;
+}
+
 .section-title {
   display: table;
   margin-bottom: 24px;
@@ -247,6 +308,20 @@ a:focus-visible {
   font-weight: 800;
   letter-spacing: -0.02em;
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+#new-arrivals-title,
+#clothing-title,
+#our-story-title {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+#new-arrivals-title.is-visible,
+#clothing-title.is-visible,
+#our-story-title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-title::after {
@@ -386,12 +461,23 @@ a:focus-visible {
   .section-title {
     font-size: 32px;
   }
+
+  .story-panel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    min-height: 520px;
+  }
 }
 
 
 /* ---------- No animation if the visitor turned it off ---------- */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .section-title::after {
     animation: none;
   }
+
 }
