@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>URBN</title>
 
-  <!-- Font: Inter. Remove these 3 lines to use a system font instead. -->
+  <!-- Font: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
@@ -18,18 +18,15 @@
   <!-- ================= HEADER ================= -->
   <header class="header">
 
-    <!-- Logo -->
-    <a href="index.html" class="logo">URBN</a>
+    <a href="#home" class="logo">URBN</a>
 
-    <!-- Navigation (to change the active page, move class="active" to another link) -->
     <nav class="nav" aria-label="Main">
-      <a href="#home" class="nav-link" aria-current="page">Home</a>
-      <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#newarrivals" class="nav-link">New Arrivals</a>
       <a href="#clothing" class="nav-link">Clothing</a>
-      <a href="#our-story" class="nav-link">About</a>
+      <a href="#about" class="nav-link">About</a>
     </nav>
 
-    <!-- Search, account, and cart -->
     <div class="header-actions">
 
       <!-- Search bar -->
@@ -56,14 +53,42 @@
   <!-- ================= MAIN ================= -->
   <main class="main">
 
-    <!-- Big banner (change the picture in src) -->
+    <!-- Big banner slider (change the pictures in src) -->
     <section class="box hero">
-      <img src="homeImages/herobox.jpg" alt="">
-      <div class="box-text">
-        <p class="box-label">CLOTHING ESSENTIALS</p>
-        <h2 class="box-title">Charlez</h2>
-        <p class="box-sub">Modern clothing. Everyday fits. Built for you.</p>
+
+      <div class="slide active">
+        <img src="homeImages/herobox.jpg" alt="">
+        <div class="box-text">
+          <p class="box-label">CLOTHING ESSENTIALS</p>
+          <h2 class="box-title">Charlez</h2>
+          <p class="box-sub">Modern clothing. Everyday fits. Built for you.</p>
+        </div>
       </div>
+
+      <div class="slide">
+        <img src="homeImages/hero2.jpg" alt="">
+        <div class="box-text">
+          <p class="box-label">NEW ARRIVALS</p>
+          <h2 class="box-title">Fresh Drops</h2>
+          <p class="box-sub">Check out the latest urban fits.</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="homeImages/hero3.jpg" alt="">
+        <div class="box-text">
+          <p class="box-label">OUTERWEAR</p>
+          <h2 class="box-title">Layer Up</h2>
+          <p class="box-sub">Jackets built for the city.</p>
+        </div>
+      </div>
+
+      <div class="dots">
+        <button class="dot active" aria-label="Slide 1"></button>
+        <button class="dot" aria-label="Slide 2"></button>
+        <button class="dot" aria-label="Slide 3"></button>
+      </div>
+
     </section>
 
     <!-- 3 boxes below the banner (change the picture in each src) -->
@@ -95,8 +120,10 @@
 
     </section>
 
-    <section class="new-arrivals" id="new-arrivals" aria-labelledby="new-arrivals-title">
+    <!-- New arrivals -->
+    <section class="new-arrivals" id="newarrivals" aria-labelledby="new-arrivals-title">
       <h1 class="section-title" id="new-arrivals-title">NEW ARRIVALS</h1>
+
       <div class="products">
         <article class="product">
           <div class="product-image">
@@ -134,7 +161,7 @@
         </article>
         <article class="product">
           <div class="product-image">
-          <img src="T-shirts/t3.png" alt="T-shirt">
+            <img src="T-shirts/t3.png" alt="T-shirt">
           </div>
           <div class="product-info">
             <div>
@@ -260,46 +287,56 @@
         </article>
       </div>
     </section>
-  </main>
-  <section class="clothing" id="clothing" aria-labelledby="clothing-title">
-      <h2 class="section-title" id="clothing-title">CLOTHING</h2>
-      <div class="cards">
-        <article class="box card clothing-category">
-          <img src="" alt="">
-          <div class="box-text">
-            <h3 class="box-title">TOPS</h3>
-            <p class="box-sub">Everyday essentials</p>
-          </div>
-        </article>
-        <article class="box card clothing-category">
-          <img src="" alt="">
-          <div class="box-text">
-            <h3 class="box-title">BOTTOMS</h3>
-            <p class="box-sub">Fits for every day</p>
-          </div>
-        </article>
-        <article class="box card clothing-category">
-          <img src="" alt="">
-          <div class="box-text">
-            <h3 class="box-title">OUTERWEAR</h3>
-            <p class="box-sub">Layer up your look</p>
-          </div>
-        </article>
-      </div>
-    </section>
 
-    <section class="our-story" id="our-story" aria-labelledby="our-story-title">
-      <h2 class="section-title" id="our-story-title">OUR STORY</h2>
-      <div class="story-panel">
-        <p class="story-lead">Great street style shouldn't cost a fortune.</p>
-        <div class="story-copy">
-          <p>URBN started with a simple idea: good clothes shouldn't go to waste. We hunt through thrift finds and pre-loved pieces to bring you urban fits with real character, from oversized tees and heavyweight hoodies to baggy denim and cargos.</p>
-          <p><strong>Every piece is one of a kind. When it's gone, it's gone.</strong></p>
+  </main>
+
+
+  <!-- ================= CLOTHING ================= -->
+  <section class="clothing" id="clothing" aria-labelledby="clothing-title">
+    <h2 class="section-title" id="clothing-title">CLOTHING</h2>
+
+    <div class="cards">
+      <article class="box card clothing-category">
+        <img src="" alt="">
+        <div class="box-text">
+          <h3 class="box-title">TOPS</h3>
+          <p class="box-sub">Everyday essentials</p>
         </div>
+      </article>
+
+      <article class="box card clothing-category">
+        <img src="" alt="">
+        <div class="box-text">
+          <h3 class="box-title">BOTTOMS</h3>
+          <p class="box-sub">Fits for every day</p>
+        </div>
+      </article>
+
+      <article class="box card clothing-category">
+        <img src="" alt="">
+        <div class="box-text">
+          <h3 class="box-title">OUTERWEAR</h3>
+          <p class="box-sub">Layer up your look</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+  <section class="our-story" id="about" aria-labelledby="our-story-title">
+    <h2 class="section-title" id="our-story-title">OUR STORY</h2>
+
+    <div class="story-panel">
+      <p class="story-lead">Great street style shouldn't cost a fortune.</p>
+      <div class="story-copy">
+        <p>URBN started with a simple idea: good clothes shouldn't go to waste. We hunt through thrift finds and pre-loved pieces to bring you urban fits with real character, from oversized tees and heavyweight hoodies to baggy denim and cargos.</p>
+        <p><strong>Every piece is one of a kind. When it's gone, it's gone.</strong></p>
       </div>
-    </section>
+    </div>
+  </section>
 
   <script src="backend.js"></script>
-
 </body>
 </html>

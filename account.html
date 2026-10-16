@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URBN | Account</title>
+
+  <!-- Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="account-page">
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+
+    <a href="HCIPROJECT.html#home" class="logo">URBN</a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="HCIPROJECT.html#home" class="nav-link">Home</a>
+      <a href="HCIPROJECT.html#newarrivals" class="nav-link">New Arrivals</a>
+      <a href="HCIPROJECT.html#clothing" class="nav-link">Clothing</a>
+      <a href="HCIPROJECT.html#about" class="nav-link">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="account.html" class="icon-btn" aria-label="Account" aria-current="page">
+        <img src="Icons/user.svg" alt="" class="icon">
+      </a>
+      <a href="cart.html" class="icon-btn" aria-label="Cart">
+        <img src="Icons/cart.svg" alt="" class="icon">
+      </a>
+    </div>
+
+  </header>
+
+
+  <!-- ================= ACCOUNT ================= -->
+  <main class="account">
+
+    <!-- Log in form -->
+    <form class="account-form" id="login-form">
+      <h1 class="account-title">LOG IN</h1>
+
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" placeholder="name@email.com" required>
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" placeholder="Enter your password" required>
+
+      <button type="submit" class="account-btn">Log in</button>
+
+      <p class="account-switch">
+        No account yet? <a href="#" id="show-signup">Sign up</a>
+      </p>
+    </form>
+
+    <!-- Sign up form (hidden until "Sign up" is clicked) -->
+    <form class="account-form" id="signup-form" hidden>
+      <h1 class="account-title">SIGN UP</h1>
+
+      <div class="name-row">
+        <div>
+          <label for="signup-first">First name</label>
+          <input type="text" id="signup-first" placeholder="Joshua" required>
+        </div>
+        <div>
+          <label for="signup-last">Last name</label>
+          <input type="text" id="signup-last" placeholder="Garcia" required>
+        </div>
+      </div>
+
+      <label for="signup-email">Email</label>
+      <input type="email" id="signup-email" placeholder="name@email.com" required>
+
+      <label for="signup-phone">Contact number</label>
+      <input type="tel" id="signup-phone" placeholder="09123456789" pattern="09[0-9]{9}" title="Enter an 11-digit number starting with 09" required>
+
+      <label for="signup-password">Password</label>
+      <input type="password" id="signup-password" placeholder="Create a password" minlength="6" required>
+
+      <button type="submit" class="account-btn">Create account</button>
+
+      <p class="account-switch">
+        Already have an account? <a href="#" id="show-login">Log in</a>
+      </p>
+    </form>
+
+  </main>
+
+  <script src="account.js"></script>
+</body>
+</html>
