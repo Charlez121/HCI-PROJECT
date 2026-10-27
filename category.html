@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URBN | Clothing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="category-page">
+  <header class="header">
+    <a href="HCIPROJECT.html#home" class="logo">URBN</a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="HCIPROJECT.html#home" class="nav-link">Home</a>
+      <a href="HCIPROJECT.html#newarrivals" class="nav-link">New Arrivals</a>
+      <a href="HCIPROJECT.html#clothing" class="nav-link active" aria-current="location">Clothing</a>
+      <a href="HCIPROJECT.html#about" class="nav-link">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <form class="search" role="search" action="HCIPROJECT.html" method="get">
+        <img src="assets/icons/search.svg" alt="" class="icon search-icon">
+        <input type="search" name="q" class="search-input" placeholder="Search..." aria-label="Search products">
+      </form>
+      <a href="pages/account.html" class="icon-btn" aria-label="Account">
+        <img src="assets/icons/user.svg" alt="" class="icon">
+      </a>
+      <a href="pages/cart.html" class="icon-btn" aria-label="Cart">
+        <img src="assets/icons/cart.svg" alt="" class="icon">
+      </a>
+    </div>
+  </header>
+
+  <div class="category-scroll-label" id="category-scroll-label" aria-hidden="true" hidden></div>
+
+  <main class="category-page-content">
+    <h1 class="section-title" id="category-title"></h1>
+    <p class="empty-products" id="empty-products" role="status" hidden></p>
+    <div class="products" id="category-products"></div>
+  </main>
+
+  <div class="modal" id="product-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button type="button" class="modal-close" aria-label="Close product details">&times;</button>
+
+      <div class="modal-image">
+        <img id="modal-image" src="" alt="">
+      </div>
+
+      <div class="modal-info">
+        <p class="modal-label">URBN SELECT</p>
+        <h2 id="modal-name"></h2>
+        <p class="modal-price" id="modal-price"></p>
+        <p class="modal-note">One of a kind. When it's gone, it's gone.</p>
+
+        <fieldset class="modal-options">
+          <legend>Size</legend>
+          <div class="modal-sizes">
+            <button type="button" class="modal-size" aria-pressed="false">S</button>
+            <button type="button" class="modal-size is-selected" aria-pressed="true">M</button>
+            <button type="button" class="modal-size" aria-pressed="false">L</button>
+            <button type="button" class="modal-size" aria-pressed="false">XL</button>
+          </div>
+        </fieldset>
+
+        <div class="modal-quantity">
+          <span>Quantity</span>
+          <div class="modal-quantity-control">
+            <button type="button" id="modal-quantity-down" aria-label="Decrease quantity">−</button>
+            <output id="modal-quantity">1</output>
+            <button type="button" id="modal-quantity-up" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <button type="button" class="account-btn" id="modal-add">Add to cart</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/category.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>

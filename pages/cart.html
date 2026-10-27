@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBN | Cart</title>
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<!-- account-page is reused here so the nav links get the hover underline -->
+
+<body class="account-page">
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <a href="../HCIPROJECT.html#home" class="logo">URBN</a>
+
+        <nav class="nav" aria-label="Main">
+            <a href="../HCIPROJECT.html#home" class="nav-link">Home</a>
+            <a href="../HCIPROJECT.html#newarrivals" class="nav-link">New Arrivals</a>
+            <a href="../HCIPROJECT.html#clothing" class="nav-link">Clothing</a>
+            <a href="../HCIPROJECT.html#about" class="nav-link">About</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="account.html" class="icon-btn" aria-label="Account">
+                <img src="../assets/icons/user.svg" alt="" class="icon">
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Cart" aria-current="page">
+                <img src="../assets/icons/cart.svg" alt="" class="icon">
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- ================= CART ================= -->
+    <main class="cart">
+        <h1 class="cart-title">YOUR CART</h1>
+
+        <div class="cart-list-wrap">
+            <div id="cart-items"></div>
+        </div>
+
+        <div class="cart-footer">
+            <span class="cart-total-label">Total</span>
+            <strong id="cart-total">₱ 0.00</strong>
+        </div>
+
+        <button type="button" class="account-btn" id="checkout">Checkout</button>
+        <p class="cart-message" id="cart-message"></p>
+    </main>
+
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body id="home">
@@ -31,19 +32,19 @@
 
       <!-- Search bar -->
       <form class="search" role="search" action="clothing.html" method="get">
-        <img src="Icons/search.svg" alt="" class="icon search-icon">
+        <img src="assets/icons/search.svg" alt="" class="icon search-icon">
         <input type="search" name="q" class="search-input" placeholder="Search..." aria-label="Search products">
         <ul class="suggestions" hidden></ul>
       </form>
 
       <!-- Account -->
-      <a href="account.html" class="icon-btn" aria-label="Account">
-        <img src="Icons/user.svg" alt="" class="icon">
+      <a href="pages/account.html" class="icon-btn" aria-label="Account">
+        <img src="assets/icons/user.svg" alt="" class="icon">
       </a>
 
       <!-- Cart -->
-      <a href="cart.html" class="icon-btn" aria-label="Cart">
-        <img src="Icons/cart.svg" alt="" class="icon">
+      <a href="pages/cart.html" class="icon-btn" aria-label="Cart">
+        <img src="assets/icons/cart.svg" alt="" class="icon">
       </a>
 
     </div>
@@ -57,7 +58,7 @@
     <section class="box hero">
 
       <div class="slide active">
-        <img src="homeImages/herobox.jpg" alt="">
+        <img src="assets/images/home/herobox.jpg" alt="">
         <div class="box-text">
           <p class="box-label">CLOTHING ESSENTIALS</p>
           <h2 class="box-title">Charlez</h2>
@@ -66,7 +67,7 @@
       </div>
 
       <div class="slide">
-        <img src="homeImages/hero2.jpg" alt="">
+        <img src="assets/images/home/hero2.jpg" alt="">
         <div class="box-text">
           <p class="box-label">NEW ARRIVALS</p>
           <h2 class="box-title">Fresh Drops</h2>
@@ -75,7 +76,7 @@
       </div>
 
       <div class="slide">
-        <img src="homeImages/hero3.jpg" alt="">
+        <img src="assets/images/home/hero3.jpg" alt="">
         <div class="box-text">
           <p class="box-label">OUTERWEAR</p>
           <h2 class="box-title">Layer Up</h2>
@@ -94,124 +95,125 @@
     <!-- 3 boxes below the banner (change the picture in each src) -->
     <section class="cards">
 
-      <article class="box card">
-        <img src="homeImages/1.jpg" alt="">
+      <a href="category.html?category=outerwear" class="box card clothing-category">
+        <img src="assets/images/home/1.jpg" alt="">
         <div class="box-text">
-          <h2 class="box-title"></h2>
-          <p class="box-sub"></p>
+          <h2 class="box-title">STREETWEAR</h2>
+          <p class="box-sub">Everyday street fits</p>
         </div>
-      </article>
+      </a>
 
-      <article class="box card">
-        <img src="homeImages/2.jpg" alt="">
+      <a href="#newarrivals" class="box card clothing-category">
+        <img src="assets/images/home/2.jpg" alt="">
         <div class="box-text">
-          <h2 class="box-title"></h2>
-          <p class="box-sub"></p>
+          <h2 class="box-title">NEW ARRIVALS</h2>
+          <p class="box-sub">Fresh drops this week</p>
         </div>
-      </article>
+      </a>
 
-      <article class="box card">
-        <img src="homeImages/3.jpg" alt="">
+      <a href="#clothing" class="box card clothing-category">
+        <img src="assets/images/home/3.jpg" alt="">
         <div class="box-text">
-          <h2 class="box-title"></h2>
-          <p class="box-sub"></p>
+          <h2 class="box-title">OUTERWEAR</h2>
+          <p class="box-sub">Layer up your look</p>
         </div>
-      </article>
+      </a>
 
     </section>
 
     <!-- New arrivals -->
     <section class="new-arrivals" id="newarrivals" aria-labelledby="new-arrivals-title">
       <h1 class="section-title" id="new-arrivals-title">NEW ARRIVALS</h1>
-
       <div class="products">
-        <article class="product">
+        <article class="product" data-category="tops" data-product-id="0">
           <div class="product-image">
-            <img src="T-shirts/t1.jpg" alt="T-shirt">
+            <img src="assets/images/products/tshirts/t1.jpg" alt="T-shirt">
           </div>
           <div class="product-info">
             <div>
-              <p class="product-name">Product Name</p>
-              <p class="product-price">₱ 0.00</p>
+              <p class="product-name">Stay Gold Oversized Tee</p>
+              <p class="product-price">₱ 1,299</p>
               <div class="product-colors">
                 <span></span><span></span><span></span>
               </div>
             </div>
-            <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+            <button class="add-cart" aria-label="Add Stay Gold Oversized Tee to cart">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
+        <article class="product" data-category="tops" data-product-id="1">
           <div class="product-image">
-            <img src="T-shirts/t2.jpg" alt="T-shirt">
+            <img src="assets/images/products/tshirts/t2.jpg" alt="T-shirt">
           </div>
           <div class="product-info">
             <div>
-              <p class="product-name">Product Name</p>
-              <p class="product-price">₱ 0.00</p>
+              <p class="product-name">Urban Graffiti Crop Tee</p>
+              <p class="product-price">₱ 899</p>
               <div class="product-colors">
                 <span></span><span></span><span></span>
               </div>
             </div>
-            <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+            <button class="add-cart" aria-label="Add Urban Graffiti Crop Tee to cart">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
+        <article class="product" data-category="tops" data-product-id="2">
           <div class="product-image">
-            <img src="T-shirts/t3.png" alt="T-shirt">
+            <img src="assets/images/products/tshirts/t3.jpg" alt="T-shirt">
           </div>
           <div class="product-info">
             <div>
-              <p class="product-name">Product Name</p>
-              <p class="product-price">₱ 0.00</p>
+              <p class="product-name">Acid Wash Graphic Top</p>
+              <p class="product-price">₱ 1,099</p>
               <div class="product-colors">
                 <span></span><span></span><span></span>
               </div>
             </div>
-            <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+            <button class="add-cart" aria-label="Add Acid Wash Graphic Top to cart">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
+        <article class="product" data-category="tops" data-product-id="3">
           <div class="product-image">
-            <img src="T-shirts/t4.jpg" alt="T-shirt">
+            <img src="assets/images/products/tshirts/t4.jpg" alt="T-shirt">
           </div>
           <div class="product-info">
             <div>
-              <p class="product-name">Product Name</p>
-              <p class="product-price">₱ 0.00</p>
+              <p class="product-name">Street Style Boxy Tee</p>
+              <p class="product-price">₱ 1,499</p>
               <div class="product-colors">
                 <span></span><span></span><span></span>
               </div>
             </div>
-            <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+            <button class="add-cart" aria-label="Add Street Style Boxy Tee to cart">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
+        <article class="product" data-category="tops" data-product-id="4">
           <div class="product-image">
-            <img src="T-shirts/t5.png" alt="T-shirt">
+            <img src="assets/images/products/tshirts/t5.jpg" alt="T-shirt">
           </div>
           <div class="product-info">
             <div>
-              <p class="product-name">Product Name</p>
-              <p class="product-price">₱ 0.00</p>
+              <p class="product-name">Faded Black Logo Tee</p>
+              <p class="product-price">₱ 999</p>
               <div class="product-colors">
                 <span></span><span></span><span></span>
               </div>
             </div>
-            <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+            <button class="add-cart" aria-label="Add Faded Black Logo Tee to cart">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
-          <div class="product-image"></div>
+        <article class="product" data-category="bottoms" data-product-id="5">
+          <div class="product-image">
+            <img src="assets/images/products/pants/p1.jpg" alt="Pants">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -221,12 +223,14 @@
               </div>
             </div>
             <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
-          <div class="product-image"></div>
+        <article class="product" data-category="bottoms" data-product-id="6">
+          <div class="product-image">
+            <img src="assets/images/products/pants/p2.jpg" alt="Pants">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -236,12 +240,14 @@
               </div>
             </div>
             <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
-          <div class="product-image"></div>
+        <article class="product" data-category="bottoms" data-product-id="7">
+          <div class="product-image">
+            <img src="assets/images/products/pants/p3.jpg" alt="Pants">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -251,12 +257,14 @@
               </div>
             </div>
             <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
-          <div class="product-image"></div>
+        <article class="product" data-category="bottoms" data-product-id="8">
+          <div class="product-image">
+            <img src="assets/images/products/pants/p4.jpg" alt="Pants">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -266,12 +274,14 @@
               </div>
             </div>
             <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
-        <article class="product">
-          <div class="product-image"></div>
+        <article class="product" data-category="bottoms" data-product-id="9">
+          <div class="product-image">
+            <img src="assets/images/products/pants/p5.jpg" alt="Pants">
+          </div>
           <div class="product-info">
             <div>
               <p class="product-name">Product Name</p>
@@ -281,7 +291,7 @@
               </div>
             </div>
             <button class="add-cart" aria-label="Add Product Name to cart">
-              <img src="Icons/cart.svg" alt="">
+              <img src="assets/icons/cart.svg" alt="">
             </button>
           </div>
         </article>
@@ -296,29 +306,29 @@
     <h2 class="section-title" id="clothing-title">CLOTHING</h2>
 
     <div class="cards">
-      <article class="box card clothing-category">
-        <img src="" alt="">
+      <a href="category.html?category=tops" class="box card clothing-category" aria-label="Show tops">
+        <img src="assets/images/products/tshirts/t1.jpg" alt="">
         <div class="box-text">
           <h3 class="box-title">TOPS</h3>
           <p class="box-sub">Everyday essentials</p>
         </div>
-      </article>
+      </a>
 
-      <article class="box card clothing-category">
-        <img src="" alt="">
+      <a href="category.html?category=bottoms" class="box card clothing-category" aria-label="Show bottoms">
+        <img src="assets/images/products/pants/p1.jpg" alt="">
         <div class="box-text">
           <h3 class="box-title">BOTTOMS</h3>
           <p class="box-sub">Fits for every day</p>
         </div>
-      </article>
+      </a>
 
-      <article class="box card clothing-category">
-        <img src="" alt="">
+      <a href="category.html?category=outerwear" class="box card clothing-category" aria-label="Show outerwear">
+        <img src="assets/images/home/hero3.jpg" alt="">
         <div class="box-text">
           <h3 class="box-title">OUTERWEAR</h3>
           <p class="box-sub">Layer up your look</p>
         </div>
-      </article>
+      </a>
 
     </div>
   </section>
@@ -331,12 +341,56 @@
     <div class="story-panel">
       <p class="story-lead">Great street style shouldn't cost a fortune.</p>
       <div class="story-copy">
-        <p>URBN started with a simple idea: good clothes shouldn't go to waste. We hunt through thrift finds and pre-loved pieces to bring you urban fits with real character, from oversized tees and heavyweight hoodies to baggy denim and cargos.</p>
+        <p>URBN started with a simple idea: good clothes shouldn't go to waste. We hunt through thrift finds and
+          pre-loved pieces to bring you urban fits with real character, from oversized tees and heavyweight hoodies to
+          baggy denim and cargos.</p>
         <p><strong>Every piece is one of a kind. When it's gone, it's gone.</strong></p>
       </div>
     </div>
   </section>
 
-  <script src="backend.js"></script>
+  <!-- ================= PRODUCT POP-UP ================= -->
+  <div class="modal" id="product-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button type="button" class="modal-close" aria-label="Close product details">&times;</button>
+
+      <div class="modal-image">
+        <img id="modal-image" src="" alt="">
+      </div>
+
+      <div class="modal-info">
+        <p class="modal-label">URBN SELECT</p>
+        <h2 id="modal-name"></h2>
+        <p class="modal-price" id="modal-price"></p>
+        <p class="modal-note">One of a kind. When it's gone, it's gone.</p>
+
+        <fieldset class="modal-options">
+          <legend>Size</legend>
+          <div class="modal-sizes">
+            <button type="button" class="modal-size" aria-pressed="false">S</button>
+            <button type="button" class="modal-size is-selected" aria-pressed="true">M</button>
+            <button type="button" class="modal-size" aria-pressed="false">L</button>
+            <button type="button" class="modal-size" aria-pressed="false">XL</button>
+          </div>
+        </fieldset>
+
+        <div class="modal-quantity">
+          <span>Quantity</span>
+          <div class="modal-quantity-control">
+            <button type="button" id="modal-quantity-down" aria-label="Decrease quantity">−</button>
+            <output id="modal-quantity">1</output>
+            <button type="button" id="modal-quantity-up" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <button type="button" class="account-btn" id="modal-add">Add to cart</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

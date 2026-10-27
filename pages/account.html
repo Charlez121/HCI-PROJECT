@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="account-page">
@@ -18,21 +19,21 @@
   <!-- ================= HEADER ================= -->
   <header class="header">
 
-    <a href="HCIPROJECT.html#home" class="logo">URBN</a>
+    <a href="../HCIPROJECT.html#home" class="logo">URBN</a>
 
     <nav class="nav" aria-label="Main">
-      <a href="HCIPROJECT.html#home" class="nav-link">Home</a>
-      <a href="HCIPROJECT.html#newarrivals" class="nav-link">New Arrivals</a>
-      <a href="HCIPROJECT.html#clothing" class="nav-link">Clothing</a>
-      <a href="HCIPROJECT.html#about" class="nav-link">About</a>
+      <a href="../HCIPROJECT.html#home" class="nav-link">Home</a>
+      <a href="../HCIPROJECT.html#newarrivals" class="nav-link">New Arrivals</a>
+      <a href="../HCIPROJECT.html#clothing" class="nav-link">Clothing</a>
+      <a href="../HCIPROJECT.html#about" class="nav-link">About</a>
     </nav>
 
     <div class="header-actions">
       <a href="account.html" class="icon-btn" aria-label="Account" aria-current="page">
-        <img src="Icons/user.svg" alt="" class="icon">
+        <img src="../assets/icons/user.svg" alt="" class="icon">
       </a>
       <a href="cart.html" class="icon-btn" aria-label="Cart">
-        <img src="Icons/cart.svg" alt="" class="icon">
+        <img src="../assets/icons/cart.svg" alt="" class="icon">
       </a>
     </div>
 
@@ -78,7 +79,8 @@
       <input type="email" id="signup-email" placeholder="name@email.com" required>
 
       <label for="signup-phone">Contact number</label>
-      <input type="tel" id="signup-phone" placeholder="09123456789" pattern="09[0-9]{9}" title="Enter an 11-digit number starting with 09" required>
+      <input type="tel" id="signup-phone" placeholder="09123456789" pattern="09[0-9]{9}"
+        title="Enter an 11-digit number starting with 09" required>
 
       <label for="signup-password">Password</label>
       <input type="password" id="signup-password" placeholder="Create a password" minlength="6" required>
@@ -90,8 +92,17 @@
       </p>
     </form>
 
+    <!-- Shown instead of the forms when someone is logged in -->
+    <section class="account-form" id="welcome" hidden>
+      <h1 class="account-title">WELCOME</h1>
+      <p class="account-switch" id="welcome-name"></p>
+      <button type="button" class="account-btn" id="logout">Log out</button>
+    </section>
+
   </main>
 
-  <script src="account.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/account.js"></script>
 </body>
+
 </html>
