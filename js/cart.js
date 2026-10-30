@@ -194,7 +194,8 @@ if (cartList) {
   });
 
   // Finish checkout after requiring the visitor to log in.
-  document.getElementById("checkout").addEventListener("click", () => {
+  const checkoutButton = document.getElementById("checkout");
+  checkoutButton.addEventListener("click", async () => {
     if (getCart().length === 0) {
       cartMessage.textContent = "Your cart is empty.";
       return;
@@ -204,9 +205,53 @@ if (cartList) {
       window.location.href = "account.html?next=cart.html";
       return;
     }
+    const cartItems = getCart();
+    const order = {
+      id: Date.now(),
+      email: localStorage.getItem("currentUser"),
+      placedAt: new Date().toISOString(),
+      items: cartItems.map((item) => ({ ...item })),
+      total: cartItems.reduce((total, item) => total + item.price * item.qty, 0)
+    };
 
-    saveCart([]);
-    renderCart();
-    cartMessage.textContent = "Order placed! Thank you for shopping at URBN.";
+    const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const customer = savedUsers.find((user) => user.email === order.email);
+    const orderData = {
+      order_number: order.id.toString(),
+      customer_name: [customer?.firstName, customer?.lastName].filter(Boolean).join(" ") || "Customer",
+      customer_email: order.email,
+      customer_phone: customer?.phone || "",
+      product_name: cartItems.map((item) => `${item.name} × ${item.qty}`).join(", "),
+      quantity: cartItems.reduce((sum, item) => sum + item.qty, 0),
+      total_price: order.total
+    };
+
+    checkoutButton.disabled = true;
+    cartMessage.textContent = "Saving your order...";
+
+    try {
+      const response = await fetch("http://localhost:3000/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(orderData)
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || `Server returned ${response.status}`);
+      }
+
+      saveCart([]);
+      renderCart();
+      cartMessage.textContent = `Order #${order.id} placed! Thank you for shopping at URBN.`;
+    } catch (error) {
+      console.error("Failed to save order to the backend:", error);
+      cartMessage.textContent =
+        "We couldn't save your order. Please check that the backend and database are running, then try again. Your cart has not been cleared.";
+    } finally {
+      checkoutButton.disabled = false;
+    }
   });
 }

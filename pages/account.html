@@ -29,6 +29,11 @@
     </nav>
 
     <div class="header-actions">
+      <form class="search" role="search" action="../HCIPROJECT.html" method="get">
+        <img src="../assets/icons/search.svg" alt="" class="icon search-icon">
+        <input type="search" name="q" class="search-input" placeholder="Search..." aria-label="Search products">
+        <ul class="suggestions" hidden></ul>
+      </form>
       <a href="account.html" class="icon-btn" aria-label="Account" aria-current="page">
         <img src="../assets/icons/user.svg" alt="" class="icon">
       </a>
@@ -93,15 +98,78 @@
     </form>
 
     <!-- Shown instead of the forms when someone is logged in -->
-    <section class="account-form" id="welcome" hidden>
-      <h1 class="account-title">WELCOME</h1>
-      <p class="account-switch" id="welcome-name"></p>
-      <button type="button" class="account-btn" id="logout">Log out</button>
+    <section class="account-dashboard" id="welcome" hidden>
+      <div class="account-dashboard-heading">
+        <div>
+          <p class="account-eyebrow">YOUR URBN ACCOUNT</p>
+          <h1 class="account-title" id="welcome-title">WELCOME</h1>
+          <p class="account-subtitle" id="welcome-name"></p>
+        </div>
+        <a class="account-text-link" href="../HCIPROJECT.html#newarrivals">Continue shopping</a>
+      </div>
+
+      <div class="account-dashboard-grid">
+        <section class="account-card profile-card" aria-labelledby="profile-title">
+          <div class="account-card-heading">
+            <div>
+              <p class="account-eyebrow">ACCOUNT DETAILS</p>
+              <h2 id="profile-title">Your profile</h2>
+            </div>
+            <button type="button" class="account-outline-btn" id="edit-profile">Edit</button>
+          </div>
+
+          <div id="profile-details">
+            <p class="profile-name" id="profile-name"></p>
+            <p class="profile-detail" id="profile-email"></p>
+            <p class="profile-detail" id="profile-phone"></p>
+          </div>
+
+          <form id="profile-form" hidden>
+            <div class="name-row">
+              <div>
+                <label for="profile-first">First name</label>
+                <input type="text" id="profile-first" required>
+              </div>
+              <div>
+                <label for="profile-last">Last name</label>
+                <input type="text" id="profile-last" required>
+              </div>
+            </div>
+            <label for="profile-phone-input">Contact number</label>
+            <input type="tel" id="profile-phone-input" pattern="09[0-9]{9}"
+              title="Enter an 11-digit number starting with 09" required>
+            <div class="profile-form-actions">
+              <button type="submit" class="account-btn">Save changes</button>
+              <button type="button" class="account-outline-btn" id="cancel-profile">Cancel</button>
+            </div>
+          </form>
+
+          <p class="account-message" id="profile-message" role="status" aria-live="polite"></p>
+          <a class="account-secondary-link" href="cart.html">View your cart</a>
+        </section>
+
+        <section class="account-card orders-card" aria-labelledby="orders-title">
+          <div class="account-card-heading">
+            <div>
+              <p class="account-eyebrow">THE LATEST FROM URBN</p>
+              <h2 id="orders-title">Your orders</h2>
+            </div>
+            <span class="order-count" id="order-count">0 orders</span>
+          </div>
+          <div id="order-list" class="order-list"></div>
+        </section>
+      </div>
+
+      <div class="account-logout-row">
+        <span>Shopping with URBN is better with you.</span>
+        <button type="button" class="account-text-link" id="logout">Log out</button>
+      </div>
     </section>
 
   </main>
 
   <script src="../js/cart.js"></script>
+  <script src="../js/search.js"></script>
   <script src="../js/account.js"></script>
 </body>
 
