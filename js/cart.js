@@ -45,7 +45,7 @@ document.querySelectorAll(".add-cart").forEach((button) => {
       price: Number(
         productCard.querySelector(".product-price").textContent.replace(/[^0-9.]/g, "")
       ),
-      image: productImage ? productImage.getAttribute("src") : "",
+      image: productImage ? productImage.src : "",
       size: button.dataset.size || "",
       qty: Number(button.dataset.quantity) || 1
     };
@@ -103,6 +103,10 @@ function createElement(tagName, className = "", text = "") {
   return element;
 }
 
+function getCartImageUrl(imagePath) {
+  return new URL(imagePath, new URL("../", document.baseURI)).href;
+}
+
 function createCartButton(label, productId, quantityChange) {
   const button = createElement("button", "", label);
   button.dataset.id = productId;
@@ -130,7 +134,7 @@ function renderCart() {
 
     if (item.image) {
       const image = document.createElement("img");
-      image.src = item.image;
+      image.src = getCartImageUrl(item.image);
       image.alt = "";
       imageContainer.append(image);
     }
