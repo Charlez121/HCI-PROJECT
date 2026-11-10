@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URBN | Wishlist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="account-page">
+  <header class="header">
+    <a href="../HCIPROJECT.html#home" class="logo">URBN</a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="../HCIPROJECT.html#home" class="nav-link">Home</a>
+      <a href="../HCIPROJECT.html#newarrivals" class="nav-link">New Arrivals</a>
+      <a href="../HCIPROJECT.html#clothing" class="nav-link">Clothing</a>
+      <a href="../HCIPROJECT.html#about" class="nav-link">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="wishlist.html" class="icon-btn" aria-label="Wishlist" aria-current="page">
+        <img src="../assets/icons/heart.svg" alt="" class="icon">
+      </a>
+      <a href="account.html" class="icon-btn" aria-label="Account">
+        <img src="../assets/icons/user.svg" alt="" class="icon">
+      </a>
+      <a href="cart.html" class="icon-btn" aria-label="Cart">
+        <img src="../assets/icons/cart.svg" alt="" class="icon">
+      </a>
+    </div>
+  </header>
+
+  <main class="cart">
+    <h1 class="cart-title">YOUR WISHLIST</h1>
+    <div class="cart-list-wrap">
+      <div id="wishlist-items"></div>
+    </div>
+  </main>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+</body>
+
+</html>

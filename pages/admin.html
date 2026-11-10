@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBN | Admin</title>
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body class="admin-page">
+
+    <!-- ================= LOGIN ================= -->
+    <section class="admin-login" id="admin-login">
+        <form class="admin-login-box" id="login-form">
+            <h1>URBN Admin</h1>
+
+            <label for="admin-key">Admin password</label>
+            <input type="password" id="admin-key" required>
+
+            <button type="submit" class="account-btn">Log in</button>
+            <p class="admin-error" id="login-error" role="alert"></p>
+        </form>
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+    <div id="admin-dashboard" hidden>
+
+        <header class="admin-bar">
+            <h1 class="admin-logo">URBN <span>Admin</span></h1>
+            <div class="admin-bar-links">
+                <a href="../HCIPROJECT.html">Back to shop</a>
+                <button type="button" id="admin-logout">Log out</button>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <p class="admin-message" id="admin-message" role="status" aria-live="polite"></p>
+
+            <!-- 1. Summary cards -->
+            <section class="admin-cards" aria-label="Summary">
+                <div class="admin-card">
+                    <p class="admin-card-label">Total sales</p>
+                    <p class="admin-card-value" id="total-sales">-</p>
+                </div>
+                <div class="admin-card">
+                    <p class="admin-card-label">Orders</p>
+                    <p class="admin-card-value" id="total-orders">-</p>
+                </div>
+                <div class="admin-card">
+                    <p class="admin-card-label">Items sold</p>
+                    <p class="admin-card-value" id="items-sold">-</p>
+                </div>
+                <div class="admin-card">
+                    <p class="admin-card-label">Best seller</p>
+                    <p class="admin-card-value admin-card-text" id="best-seller-name">-</p>
+                </div>
+                <div class="admin-card">
+                    <p class="admin-card-label">Low or out of stock</p>
+                    <p class="admin-card-value" id="low-stock-count">-</p>
+                </div>
+            </section>
+
+            <!-- 2. Graphs -->
+            <section class="admin-grid">
+                <div class="admin-panel">
+                    <h2>Sales in the last 30 days</h2>
+                    <div class="chart-box">
+                        <canvas id="sales-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="admin-panel">
+                    <h2>Best sellers</h2>
+                    <div class="chart-box">
+                        <canvas id="best-chart"></canvas>
+                    </div>
+                    <p class="admin-empty" id="best-empty" hidden>No sales recorded yet. Place an order and it will show
+                        here.</p>
+                </div>
+            </section>
+
+            <!-- 3. Orders -->
+            <section class="admin-panel">
+                <h2>Orders</h2>
+                <p class="admin-note">New orders come in as Pending. Press "Mark completed" once the order is done.</p>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Date</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. Stock -->
+            <section class="admin-panel">
+                <h2>Stock</h2>
+                <p class="admin-alert" id="low-stock-alert" hidden></p>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>In stock</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stock-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 5. Archive -->
+            <section class="admin-panel">
+                <h2>Archive</h2>
+                <p class="admin-note">Archived products are kept here. Restore one to put it back on sale.</p>
+
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Archived on</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="archive-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Chart.js draws the graphs -->
+    <script src="../js/store.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

@@ -68,69 +68,47 @@ function showWelcomePanel() {
   renderOrderHistory(email);
 }
 
-async function renderOrderHistory(email) {
+function renderOrderHistory(email) {
   const orderList = document.getElementById("order-list");
   const orderCount = document.getElementById("order-count");
-  orderCount.textContent = "Loading...";
+  const orders = getOrders().filter((order) => order.email === email).reverse();
+
+  orderCount.textContent = `${orders.length} ${orders.length === 1 ? "order" : "orders"}`;
   orderList.replaceChildren();
 
-  try {
-    const response = await fetch(
-      `http://localhost:3000/api/orders?customer_email=${encodeURIComponent(email)}`
-    );
-    const orders = await response.json();
-
-    if (!response.ok || !Array.isArray(orders)) {
-      throw new Error(orders?.error || `Server returned ${response.status}`);
-    }
-
-    orderCount.textContent = `${orders.length} ${orders.length === 1 ? "order" : "orders"}`;
-
-    if (orders.length === 0) {
-      const emptyMessage = document.createElement("p");
-      emptyMessage.className = "order-empty";
-      emptyMessage.textContent = "No orders yet. Your next favorite is waiting.";
-      orderList.append(emptyMessage);
-      return;
-    }
-
-    orders.forEach((order) => {
-      const row = document.createElement("article");
-      row.className = "order-row";
-
-      const orderInfo = document.createElement("div");
-      orderInfo.className = "order-info";
-      const orderHeading = document.createElement("h3");
-      orderHeading.textContent = `Order #${order.order_number}`;
-      const orderDate = document.createElement("p");
-      const placedAt = new Date(order.order_date);
-      orderDate.textContent = Number.isNaN(placedAt.getTime())
-        ? order.order_date
-        : placedAt.toLocaleDateString(undefined, {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-          });
-      const itemSummary = document.createElement("p");
-      itemSummary.textContent = order.product_name;
-
-      const orderTotal = document.createElement("strong");
-      orderTotal.className = "order-total";
-      orderTotal.textContent = `₱ ${Number(order.total_price).toFixed(2)}`;
-
-      orderInfo.append(orderHeading, orderDate, itemSummary);
-      row.append(orderInfo, orderTotal);
-      orderList.append(row);
-    });
-  } catch (error) {
-    console.error("Failed to load orders from the backend:", error);
-    orderCount.textContent = "Unavailable";
-    const errorMessage = document.createElement("p");
-    errorMessage.className = "order-empty";
-    errorMessage.textContent =
-      "We couldn't load your orders. Check that the backend and database are running, then refresh this page.";
-    orderList.append(errorMessage);
+  if (orders.length === 0) {
+    const emptyMessage = document.createElement("p");
+    emptyMessage.className = "order-empty";
+    emptyMessage.textContent = "No orders yet. Your next favorite is waiting.";
+    orderList.append(emptyMessage);
+    return;
   }
+
+  orders.forEach((order) => {
+    const row = document.createElement("article");
+    row.className = "order-row";
+
+    const orderInfo = document.createElement("div");
+    orderInfo.className = "order-info";
+    const orderHeading = document.createElement("h3");
+    orderHeading.textContent = `Order #${order.id}`;
+    const orderDate = document.createElement("p");
+    orderDate.textContent = new Date(order.date).toLocaleDateString(undefined, {
+      year: "numeric", month: "long", day: "numeric"
+    });
+    const itemSummary = document.createElement("p");
+    itemSummary.textContent = order.items.map((item) => `${item.name} × ${item.qty}`).join(", ");
+    const orderStatus = document.createElement("p");
+    orderStatus.textContent = `Status: ${order.status}`;
+
+    const orderTotal = document.createElement("strong");
+    orderTotal.className = "order-total";
+    orderTotal.textContent = `₱ ${order.total.toFixed(2)}`;
+
+    orderInfo.append(orderHeading, orderDate, itemSummary, orderStatus);
+    row.append(orderInfo, orderTotal);
+    orderList.append(row);
+  });
 }
 
 document.getElementById("edit-profile").addEventListener("click", () => {

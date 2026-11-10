@@ -140,11 +140,17 @@ function closeProductModal() {
   selectedProductCard?.focus();
 }
 
+const productsOnSale = category ? category.products.filter((product) => {
+  const saved = getProducts().find((savedProduct) => savedProduct.id === product.id);
+  return !saved || !saved.archived;
+}) : [];
+
 if (category) {
   document.title = `URBN | ${category.title}`;
   categoryTitle.textContent = category.title;
   categoryScrollLabel.textContent = category.title;
-  categoryProducts.replaceChildren(...category.products.map(createCategoryProduct));
+  categoryProducts.replaceChildren(...productsOnSale.map(createCategoryProduct));
+  setupProductCards();
   categoryProducts.querySelectorAll(".product").forEach((productCard) => {
     productCard.tabIndex = 0;
     productCard.addEventListener("click", (event) => {
@@ -157,8 +163,8 @@ if (category) {
       openProductModal(productCard);
     });
   });
-  emptyProductsMessage.hidden = category.products.length > 0;
-  if (!category.products.length) {
+  emptyProductsMessage.hidden = productsOnSale.length > 0;
+  if (!productsOnSale.length) {
     emptyProductsMessage.textContent = "No outerwear products are available yet.";
   }
 } else {

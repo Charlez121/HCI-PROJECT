@@ -31,11 +31,17 @@
     <div class="header-actions">
 
       <!-- Search bar -->
-      <form class="search" role="search" action="clothing.html" method="get">
-        <img src="assets/icons/search.svg" alt="" class="icon search-icon">
+      <form class="search" role="search" action="HCIPROJECT.html" method="get">
+        <button class="search-submit" type="submit" aria-label="Search">
+          <img src="assets/icons/search.svg" alt="" class="icon search-icon">
+        </button>
         <input type="search" name="q" class="search-input" placeholder="Search..." aria-label="Search products">
         <ul class="suggestions" hidden></ul>
       </form>
+
+      <a href="pages/wishlist.html" class="icon-btn" aria-label="Wishlist">
+        <img src="assets/icons/heart.svg" alt="" class="icon">
+      </a>
 
       <!-- Account -->
       <a href="pages/account.html" class="icon-btn" aria-label="Account">
@@ -124,6 +130,7 @@
     <!-- New arrivals -->
     <section class="new-arrivals" id="newarrivals" aria-labelledby="new-arrivals-title">
       <h1 class="section-title" id="new-arrivals-title">NEW ARRIVALS</h1>
+      <p class="search-status" role="status" aria-live="polite" hidden></p>
       <div class="products">
         <article class="product" data-category="tops" data-product-id="0">
           <div class="product-image">
@@ -389,6 +396,7 @@
     </section>
   </div>
 
+  <script src="js/store.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/search.js"></script>
   <script src="js/main.js"></script>

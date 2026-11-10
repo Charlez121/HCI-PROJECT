@@ -25,9 +25,14 @@
 
     <div class="header-actions">
       <form class="search" role="search" action="HCIPROJECT.html" method="get">
-        <img src="assets/icons/search.svg" alt="" class="icon search-icon">
+        <button class="search-submit" type="submit" aria-label="Search">
+          <img src="assets/icons/search.svg" alt="" class="icon search-icon">
+        </button>
         <input type="search" name="q" class="search-input" placeholder="Search..." aria-label="Search products">
       </form>
+      <a href="pages/wishlist.html" class="icon-btn" aria-label="Wishlist">
+        <img src="assets/icons/heart.svg" alt="" class="icon">
+      </a>
       <a href="pages/account.html" class="icon-btn" aria-label="Account">
         <img src="assets/icons/user.svg" alt="" class="icon">
       </a>
@@ -41,6 +46,27 @@
 
   <main class="category-page-content">
     <h1 class="section-title" id="category-title"></h1>
+    <div class="filter-bar">
+      <label>Sort by
+        <select id="sort-select">
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: low to high</option>
+          <option value="price-high">Price: high to low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </label>
+      <label>Price
+        <select id="price-select">
+          <option value="all">All prices</option>
+          <option value="under-1000">Under ₱1,000</option>
+          <option value="1000-1499">₱1,000 to ₱1,499</option>
+          <option value="1500-up">₱1,500 and up</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="in-stock-only"> In stock only</label>
+      <button type="button" class="filter-reset" id="reset-filters">Reset</button>
+    </div>
+    <p class="filter-message" id="filter-message" hidden>No products match these filters.</p>
     <p class="empty-products" id="empty-products" role="status" hidden></p>
     <div class="products" id="category-products"></div>
   </main>
@@ -84,8 +110,10 @@
     </section>
   </div>
 
+  <script src="js/store.js"></script>
   <script src="js/category.js"></script>
   <script src="js/cart.js"></script>
+  <script src="js/filters.js"></script>
 </body>
 
 </html>
